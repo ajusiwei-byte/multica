@@ -1,6 +1,3 @@
-# Render Blueprint for Multica (FREE PLAN 版本)
-# 用户: ajusiwei-byte
-# 日期: 2026-09-22
 services:
   - type: web
     name: multica-backend
@@ -34,24 +31,24 @@ services:
         value: 15s
       - key: MULTICA_DAEMON_MAX_CONCURRENT_TASKS
         value: "5"
-      - key: FRONTEND_ORIGIN
-        sync: false
-      - key: MULTICA_PUBLIC_URL
-        sync: false
-      - key: MULTICA_APP_URL
-        sync: false
-      - key: CORS_ALLOWED_ORIGINS
-        sync: false
       - key: RESEND_API_KEY
-        sync: false
+        value: ""
       - key: RESEND_FROM_EMAIL
-        sync: false
+        value: ""
+      - key: FRONTEND_ORIGIN
+        value: ""
+      - key: MULTICA_PUBLIC_URL
+        value: ""
+      - key: MULTICA_APP_URL
+        value: ""
+      - key: CORS_ALLOWED_ORIGINS
+        value: ""
       - key: GOOGLE_CLIENT_ID
-        sync: false
+        value: ""
       - key: GOOGLE_CLIENT_SECRET
-        sync: false
+        value: ""
       - key: GOOGLE_REDIRECT_URI
-        sync: false
+        value: ""
   - type: web
     name: multica-web
     runtime: image
@@ -63,13 +60,10 @@ services:
     envVars:
       - key: REMOTE_API_URL
         value: https://multica-backend.onrender.com
-        sync: false
       - key: NEXT_PUBLIC_API_URL
         value: https://multica-backend.onrender.com
-        sync: false
       - key: NEXT_PUBLIC_WS_URL
         value: wss://multica-backend.onrender.com/ws
-        sync: false
       - key: HOSTNAME
         value: "0.0.0.0"
 databases:
